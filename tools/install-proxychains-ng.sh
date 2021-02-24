@@ -22,8 +22,7 @@ tar xf v$version.tar.gz
 
 (cd proxychains-ng-$version
  ./configure --prefix=/usr --sysconfdir=/etc
- make
- make install
+ make && make install
  make install-config
  echo -e "proxychains-ng安装完成，配置文件为 /etc/proxychains.conf"
 )
