@@ -43,11 +43,11 @@ install(){
 wget https://github.com/rofl0r/proxychains-ng/archive/v$version.tar.gz
 tar xf v$version.tar.gz
 
-if [ "${release}" == "centos"]; then
+if [ $release == "centos"]; then
     yum install -y gcc
-elif "${release}" == "ubuntu"; then
+elif $release == "ubuntu"; then
     apt install -y gcc
-elif "${release}" == "debian"; then
+elif $release == "debian"; then
     apt-get install -y gcc
 fi
 
@@ -60,3 +60,5 @@ fi
 
 rm -rf v$version.tar.gz proxychains-ng-$version
 }
+check_sys
+install
